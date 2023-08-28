@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 var cors = require('cors')
 const balance = require("./crypto-balance");
-var allowlist = ['http://localhost', 'https://staging.custody.coinhouse.com', 'https://custody.coinhouse.com'];
 
 app.use(cors());
 
