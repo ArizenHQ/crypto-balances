@@ -7,5 +7,5 @@ module.exports = {
     alchemyEthereum: require('./alchemy_ethereum'),
     alchemyPolygon: require('./alchemy_polygon'),
     alchemySolana: require('./alchemy_solana'),
-    alchemyArbitrum: require('./alchemy_arbitrum'),
+    alchemyArbitrum: require('./alchemy_arbitrum')
 };
