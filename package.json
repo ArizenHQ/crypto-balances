@@ -26,5 +26,6 @@
   "bugs": {
     "url": "https://github.com/danielheyman/crypto-balances/issues"
   },
-  "homepage": "https://github.com/danielheyman/crypto-balances"
+  "homepage": "https://github.com/danielheyman/crypto-balances",
+  "proxy": "http://localhost:3000"
 }
