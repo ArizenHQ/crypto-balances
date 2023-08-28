@@ -16,7 +16,7 @@ module.exports = (addr, coin) => {
                 if (!address_type) address_type = service.symbol(addr);
             }
         }
-        if(result.length === 0) return [[{ error: `no matches found` }]];
+        if(result.length === 0) return [];
         return result;
     })())
     .timeout(10000)
@@ -43,6 +43,7 @@ module.exports = (addr, coin) => {
         return obj;
     })
     .catch(e => {
+        console.error(e);
         return {
             address_type: 'unknown',
             error: e.message

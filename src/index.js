@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 var cors = require('cors')
 const balance = require("./crypto-balance");
+require('dotenv').config();
 
 app.use(cors());
 

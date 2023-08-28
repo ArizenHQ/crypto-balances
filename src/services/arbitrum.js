@@ -1,16 +1,16 @@
 module.exports = {
-    supported_address: ["ETH"],
+    supported_address: ["ARB"],
   
     check(addr) {
       return RegExp("^(0x)?[0-9a-fA-F]{40}$").test(addr);
     },
   
     symbol() {
-      return "ETH";
+      return "ARB";
     },
   
     async fetch(addr) {
-      const fetchURL = `https://eth-mainnet.g.alchemy.com/v2/${process.env.alchemyKeyEthereum}`;
+      const fetchURL = `https://arb-mainnet.g.alchemy.com/v2/${process.env.alchemyKeyArbitrum}`;
       const headers = { "Content-Type": "application/json" };
       let tokens = [];
   
@@ -30,7 +30,7 @@ module.exports = {
         const ethResponse = await makeRequest("eth_getBalance", [addr]);
         if (ethResponse.result) {
           tokens.push({
-            asset: "ETH",
+            asset: "ARB",
             quantity: parseFloat(parseInt(ethResponse.result, 16) * 10 ** -18),
           });
         }
@@ -50,6 +50,7 @@ module.exports = {
         }
         return tokens;
       } catch (error) {
+        console.error(error);
       }
     },
   };
