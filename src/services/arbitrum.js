@@ -1,3 +1,5 @@
+const config = require("./configs/arbitrum.json");
+
 module.exports = {
     supported_address: ["ARB"],
   
@@ -14,12 +16,13 @@ module.exports = {
       const headers = { "Content-Type": "application/json" };
       let tokens = [];
   
-      const makeRequest = async (method, params) => {
+      const makeRequest = async (method, params, cache='no-cache') => {
         const body = JSON.stringify({ jsonrpc: "2.0", method, headers, params });
         const requestOptions = {
           method: "POST",
           body,
           headers,
+          cache: cache
         };
   
         const response = await fetch(fetchURL, requestOptions);
@@ -39,19 +42,39 @@ module.exports = {
         if (erc20Response.result && erc20Response.result.tokenBalances) {
           for (const token of erc20Response.result.tokenBalances) {
             const { contractAddress, tokenBalance } = token;
-            const tokenMeta = await makeRequest("alchemy_getTokenMetadata", [contractAddress]);
+            let decimals = 0;
+            let name = contractAddress;
+            if(config[contractAddress.toLowerCase()]){
+              name=config[contractAddress].name;
+              decimals=config[contractAddress].decimals;
+            }
+            tokens.push({
+              asset: name,
+              quantity: parseFloat(parseInt(tokenBalance, 16)) / Math.pow(10, parseInt(decimals)|| 0),
+            });
+
+            /*
+            let config = {}
+            const tokenMeta = await makeRequest("alchemy_getTokenMetadata", [contractAddress], 'force-cache');
+            if (tokenMeta.result && tokenMeta.result.name) {
+              config[contractAddress] = {
+                name: tokenMeta.result.name,
+                decimals: parseInt(tokenMeta.result.decimals)|| 0
+              }
+              */
+            /*
+            const tokenMeta = await makeRequest("alchemy_getTokenMetadata", [contractAddress], 'force-cache');
             if (tokenMeta.result && tokenMeta.result.name) {
               tokens.push({
                 asset: tokenMeta.result.name,
                 quantity: parseFloat(parseInt(tokenBalance, 16)) / Math.pow(10, parseInt(tokenMeta.result.decimals)|| 0)
               });
-            }
+              
+            }*/
           }
         }
         return tokens;
       } catch (error) {
-        console.error(error);
       }
     },
   };
-  

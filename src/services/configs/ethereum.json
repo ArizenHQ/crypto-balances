@@ -1,0 +1,270 @@
+{
+  "0x076641af1b8f06b7f8c92587156143c109002cbe": {
+    "name": "SoPay",
+    "decimals": 18
+  },
+  "0x0b1735b6ae01eed97553a402c1ef4f4c48cc1c39": {
+    "name": "Game chain",
+    "decimals": 18
+  },
+  "0x0d3716e3e411af431a6e87e715d4b05bbcd67000": {
+    "name": "$ NFTGiftX.com",
+    "decimals": 0
+  },
+  "0x1062fdf250b44697216d07e41df93824519f47aa": {
+    "name": "Cryptolandy",
+    "decimals": 8
+  },
+  "0x1d4105534da120da243281cfc3f26aaf038e2d6f": {
+    "name": "Yooba token",
+    "decimals": 18
+  },
+  "0x1fb686cd286259732aa8be6ede9a9aebe53d2295": {
+    "name": "$ usdswap.org",
+    "decimals": 18
+  },
+  "0x2216e873ea4282ebef7a02ac5aea220be6391a7c": {
+    "name": "Smol",
+    "decimals": 18
+  },
+  "0x2b591e99afe9f32eaa6214f7b7629768c40eeb39": {
+    "name": "HEX",
+    "decimals": 8
+  },
+  "0x2ceee24f8d03fc25648c68c8e6569aa0512f6ac3": {
+    "name": "ABCHANGE.io",
+    "decimals": 9
+  },
+  "0x2e97e1d1122edfc5cae740ba61bd7f0b97e7f70a": {
+    "name": "Zyrri",
+    "decimals": 18
+  },
+  "0x2ff2b86c156583b1135c584fd940a1996fa4230b": {
+    "name": "https://findtherabbit.me",
+    "decimals": 18
+  },
+  "0x34278f6f40079eae344cbac61a764bcf85afc949": {
+    "name": "FF9.io",
+    "decimals": 18
+  },
+  "0x39cf57b4decb8ae3dec0dfca1e2ea2c320416288": {
+    "name": "$ AaveReward.com",
+    "decimals": 18
+  },
+  "0x3c139c5ef130d4db3793b1ce7017e6b326d66f2b": {
+    "name": "Tripus.io Candy Token",
+    "decimals": 0
+  },
+  "0x3e3aafa44d6e122b07d329b992f0df62cf82b1e7": {
+    "name": "BEB公有链VPOW投票官方负责兜底回购",
+    "decimals": 18
+  },
+  "0x4092678e4e78230f46a1534c0fbc8fa39780892b": {
+    "name": "Odyssey",
+    "decimals": 18
+  },
+  "0x471c3a7f132bc94938516cb2bf6f02c7521d2797": {
+    "name": "LUNA 2.0 (lunav2.io)",
+    "decimals": 18
+  },
+  "0x4af9ab04615cb91e2ee8cbedb43fb52ed205041b": {
+    "name": "KHEX.net",
+    "decimals": 18
+  },
+  "0x4c1c4957d22d8f373aed54d0853b090666f6f9de": {
+    "name": "Silverway",
+    "decimals": 18
+  },
+  "0x4defbc0c6113dc678bc2a4b77d6757eafd07219e": {
+    "name": "Tether USD",
+    "decimals": 15
+  },
+  "0x4fabb145d64652a948d72533023f6e7a623c7c53": {
+    "name": "Binance USD",
+    "decimals": 18
+  },
+  "0x569bc41be351178d3e365d06d22966b782b0cc30": {
+    "name": "USDT...",
+    "decimals": 15
+  },
+  "0x58b6a8a3302369daec383334672404ee733ab239": {
+    "name": "Livepeer",
+    "decimals": 18
+  },
+  "0x695d4e4936c0de413267c75ca684fc317e03a819": {
+    "name": "ApeSnoop.com",
+    "decimals": 18
+  },
+  "0x6bac43fa3fb4901123d85d2eaf0cb8fbf8a71989": {
+    "name": "USDT...",
+    "decimals": 15
+  },
+  "0x77fe30b2cf39245267c0a5084b66a560f1cf9e1f": {
+    "name": "Azbit",
+    "decimals": 18
+  },
+  "0x78fceca5bf5ec79c23effece97ae758665ba4f55": {
+    "name": "YouDeal Token",
+    "decimals": 18
+  },
+  "0x7b2f9706cd8473b4f5b7758b0171a9933fc6c4d6": {
+    "name": "An Etheal Promo",
+    "decimals": 0
+  },
+  "0x7eff48dd35b05bb731141bf34258cbfc7fa0daa7": {
+    "name": "$ get-usdc.com",
+    "decimals": 18
+  },
+  "0x7f9e9d2daf7e4baaf71692727895328bda904ef7": {
+    "name": "ETH...",
+    "decimals": 15
+  },
+  "0x82dfdb2ec1aa6003ed4acba663403d7c2127ff67": {
+    "name": "akSwap.io",
+    "decimals": 18
+  },
+  "0x86fa049857e0209aa7d9e616f7eb3b3b78ecfdb0": {
+    "name": "EOS",
+    "decimals": 18
+  },
+  "0x8a34ea031ba21784dc5cc38175b12f33ae91d852": {
+    "name": "ESSEX",
+    "decimals": 3
+  },
+  "0x8d27f10c48651099c8f7622143864bd8610204ed": {
+    "name": "ETH...",
+    "decimals": 15
+  },
+  "0x95146474d59798ac6d1550c9ef9471d09f430d21": {
+    "name": "$ BonusUSDT.com",
+    "decimals": 0
+  },
+  "0x95e05e2abbd26943874ac000d87c3d9e115b543c": {
+    "name": "Raptor",
+    "decimals": 18
+  },
+  "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48": {
+    "name": "USD Coin",
+    "decimals": 6
+  },
+  "0xa6de609807c7258a0d34f5307c1808f062a59794": {
+    "name": "$ USDCDrop.com",
+    "decimals": 0
+  },
+  "0xac9bb427953ac7fddc562adca86cf42d988047fd": {
+    "name": "Scatter.cx",
+    "decimals": 18
+  },
+  "0xad1cd0a72676dbb08848f5d4119a5f4b2e91e82e": {
+    "name": "www.dfw.vc零成本大富翁最高赚8000eth",
+    "decimals": 18
+  },
+  "0xaf0b2fbedd5d1fda457580fb3dabad1f5c8bbc36": {
+    "name": "LunaV2.io (Luna Token)",
+    "decimals": 18
+  },
+  "0xaf47ebbd460f21c2b3262726572ca8812d7143b0": {
+    "name": "Promodl",
+    "decimals": 0
+  },
+  "0xb08070bafc06eeb08cf1fd0c48ed940e51441256": {
+    "name": "$ abonus.site",
+    "decimals": 0
+  },
+  "0xb679afd97bcbc7448c1b327795c3ef226b39f0e9": {
+    "name": "Win Last Mile",
+    "decimals": 6
+  },
+  "0xb732b89aa5a244e48ce5826ed60c3179b82a33fa": {
+    "name": "Tеthеr UЅD",
+    "decimals": 15
+  },
+  "0xbab03ba1ad80dca87d4527960ea453a9a88a4d2e": {
+    "name": "DeNet",
+    "decimals": 18
+  },
+  "0xbddab785b306bcd9fb056da189615cc8ece1d823": {
+    "name": "ebakus",
+    "decimals": 18
+  },
+  "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2": {
+    "name": "WETH",
+    "decimals": 18
+  },
+  "0xc07d836c2615f78da2e1f2ae435bf5a9ed4e83c2": {
+    "name": "$ usdcoin.finance",
+    "decimals": 18
+  },
+  "0xc12d1c73ee7dc3615ba4e37e4abfdbddfa38907e": {
+    "name": "KickToken [old]",
+    "decimals": 8
+  },
+  "0xc30951ff31c04a47b26ce496b0510a3b2d709e92": {
+    "name": "启动公链",
+    "decimals": 18
+  },
+  "0xc8b9b029f85cca7d91545f6a3908697f02742a65": {
+    "name": "$ acader.site",
+    "decimals": 0
+  },
+  "0xcce629ba507d7256cce7d30628279a155c5309c5": {
+    "name": "Asobicoin promo",
+    "decimals": 0
+  },
+  "0xcde6061decb20cd53995cfb478432ce3062dfcbd": {
+    "name": "Tеthеr UЅD",
+    "decimals": 15
+  },
+  "0xd3ace836e47f7cf4948dffd8ca2937494c52580c": {
+    "name": "Free BOB Tokens - BobsRepair.com",
+    "decimals": 18
+  },
+  "0xd443454dfd477e1d689f2bb0bac578e9d8d4ef2c": {
+    "name": "qunfaba.com免费空投",
+    "decimals": 18
+  },
+  "0xd4de05944572d142fbf70f3f010891a35ac15188": {
+    "name": "Bulleon Promo Token",
+    "decimals": 18
+  },
+  "0xda63a8f9b33e3c927e8ce66606913be1821f67de": {
+    "name": "YunJiaMi.Com 免费交易 Free Exchange",
+    "decimals": 18
+  },
+  "0xdac17f958d2ee523a2206206994597c13d831ec7": {
+    "name": "Tether USDt",
+    "decimals": 6
+  },
+  "0xe334557e83fd0232522cc3fa79f10eb538eb49dd": {
+    "name": "ETH...",
+    "decimals": 15
+  },
+  "0xe530441f4f73bdb6dc2fa5af7c3fc5fd551ec838": {
+    "name": "GSENetwork",
+    "decimals": 4
+  },
+  "0xe65ee7c03bbb3c950cfd4895c24989afa233ef01": {
+    "name": "Zynecoin",
+    "decimals": 18
+  },
+  "0xed6ca9522fda3b9cd93025780a2939bd04a7ecd6": {
+    "name": "https://www.yidaibi.me/ 最佳一键发币解决方案 Create tokens easily",
+    "decimals": 18
+  },
+  "0xf222ba8af81d799c565241b0d3eedf9bdc4fc462": {
+    "name": "betbeb.com空投1万个ETH",
+    "decimals": 18
+  },
+  "0xf230b790e05390fc8295f4d3f60332c93bed42e2": {
+    "name": "Tronix",
+    "decimals": 6
+  },
+  "0xf2eab3a2034d3f6b63734d2e08262040e3ff7b48": {
+    "name": "Candy",
+    "decimals": 18
+  },
+  "0xf3e014fe81267870624132ef3a646b8e83853a96": {
+    "name": "VIN",
+    "decimals": 18
+  }
+}
