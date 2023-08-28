@@ -4,29 +4,21 @@ var cors = require('cors')
 const balance = require("./crypto-balance");
 var allowlist = ['http://localhost', 'https://staging.custody.coinhouse.com', 'https://custody.coinhouse.com'];
 
-var corsOptionsDelegate = function (req, callback) {
-  var corsOptions;
-  if (allowlist.indexOf(req.header('Origin')) !== -1) {
-    corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
-  } else {
-    corsOptions = { origin: false } // disable CORS for this request
-  }
-  callback(null, corsOptions) // callback expects two parameters: error and options
-}
+app.use(cors());
 
-app.get('/:coin/:addr', cors(corsOptionsDelegate), function (req, res) {
+app.get('/:coin/:addr',function (req, res) {
     balance(req.params.addr, req.params.coin)
     .then(items => res.send(items))
     .catch(error => res.send({ "error": error.message }));
 });
 
-app.get('/:addr', cors(corsOptionsDelegate), function (req, res) {
+app.get('/:addr', function (req, res) {
     balance(req.params.addr)
     .then(items => res.send(items))
     .catch(error => res.send({ "error": error.message }));
 });
 
-app.use('*', cors(corsOptionsDelegate), function (req, res) {
+app.use('*', function (req, res) {
     res.send({ "error": "invalid route" });
 });
 
