@@ -10,14 +10,14 @@
     "bluebird": "^2.3.0",
     "bs58check": "^2.1.2",
     "cors": "^2.8.5",
-    "express": "^4.16.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
     "request": "^2.88.0",
-    "websocket": "^1.0.25",
-    "dotenv": "^16.3.1"
+    "websocket": "^1.0.25"
   },
   "devDependencies": {
     "chai": "^2.1.0",
-    "mocha": "^6.2.0"
+    "mocha": "^10.2.0"
   },
   "license": "MIT",
   "author": "danielheyman",
