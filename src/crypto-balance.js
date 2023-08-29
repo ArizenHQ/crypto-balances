@@ -30,7 +30,7 @@ module.exports = (addr, coin) => {
             balances: {},
         };
         let error;
-        items.forEach(item => {
+        if(items.length > 0)items.forEach(item => {
             if (item.error) {
                 error = item.error;
                 return;
