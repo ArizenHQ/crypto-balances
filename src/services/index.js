@@ -5,7 +5,11 @@ module.exports = {
     blockonomics: require('./blockonomics'),
     neoscan: require('./neoscan'),
     ethereum: require('./ethereum'),
-    //alchemyPolygon: require('./alchemy_polygon'),
-    //alchemySolana: require('./alchemy_solana'),
-    //alchemyArbitrum: require('./alchemy_arbitrum')
+    ethereumERC20: require('./erc20-ethereum'),
+    /*
+    alchemySolana: require('./solana'),
+    alchemyArbitrum: require('./arbitrum'),
+    polygonERC20: require('./erc20-polygon'),
+    solanaERC20: require('./erc20-solana'),
+    arbitrumERC20: require('./erc20-arbitrum'),*/
 };

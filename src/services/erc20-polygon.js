@@ -12,11 +12,17 @@ module.exports = {
   symbol() {
     return "MATIC";
   },
+
   fetch(addr) {
     const url = `https://polygon-mainnet.g.alchemy.com/v2/${process.env.alchemyKeyPolygon}`;
-    const params = [addr];
+    const params = [addr, "erc20"];
     const headers = { "Content-Type": "application/json" };
-    const body = { jsonrpc: "2.0", method: "eth_getBalance", params, headers };
+    const body = {
+      jsonrpc: "2.0",
+      method: "alchemy_getTokenBalances",
+      params,
+      headers,
+    };
     return post(url, { json: true, json: body })
       .timeout(10000)
       .cancellable()
@@ -25,11 +31,20 @@ module.exports = {
           throw new Error(JSON.stringify(resp));
         if (json.error) throw new Error(json.error.message);
         let results = [];
-        if (json.result) {
-          results.push({
-            asset: "MATIC",
-            quantity: parseFloat(parseInt(json.result, 16) * 10 ** -18),
-            blockchain: "polygon",
+        if (json.result.tokenBalances) {
+          json.result.tokenBalances.map((token) => {
+            const { contractAddress, tokenBalance } = token;
+            let decimals = 0;
+            let name = contractAddress;
+            if(config[contractAddress.toLowerCase()]){
+              name=config[contractAddress].name;
+              decimals=config[contractAddress].decimals;
+            }
+            results.push({
+              asset: contractAddress,
+              quantity: parseFloat(parseInt(tokenBalance, 16)) / Math.pow(10, parseInt(decimals)|| 0),
+              blockchain: "polygon",
+            });
           });
         }
         return results;
