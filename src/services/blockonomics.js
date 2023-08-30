@@ -5,6 +5,8 @@ const bs58check = require('bs58check')
 const decimals = 8;
 const multiplier = Math.pow(10, decimals);
 
+const apiKey = "KpS5MMyTAEyLowj486FC22tHgFuQ0DWgfjBDALdSWQk"//process.env.blockonomicsKey;
+
 // See: https://www.blockonomics.co/views/segwit_xpub_convert.html
 function xpubSegwitConverter(xpub, generate = 'ypub') {
     function hexToBytes(hex) {
@@ -40,12 +42,11 @@ const blockonomics = module.exports = {
     fetch(addr) {
         const url = `https://www.blockonomics.co/api/balance`;
 
-        return post(url, { json: true, body: { addr } })
+        return post(url, { json: true, body: { addr }, headers: { Authorization: `Bearer ${apiKey}` } })
         .timeout(5000)
         .cancellable()
         .spread(function(resp, body) {
             if (resp.statusCode < 200 || resp.statusCode >= 300) throw new Error(JSON.stringify(resp));
-
             const balance = body.response.reduce((agg, x) => parseInt(x.confirmed) + agg, 0) / multiplier;
 
             // try converting xpub segwit to ypub
