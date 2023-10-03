@@ -4,6 +4,7 @@ module.exports = {
     chainz: require('./chainz'),
     //blockonomics: require('./blockonomics'),
     blockchain: require('./blockchain'),
+    blockchain: require('./blockchain-btc'),
     neoscan: require('./neoscan'),
     ethereum: require('./ethereum'),
     ethereumERC20: require('./erc20-ethereum'),
