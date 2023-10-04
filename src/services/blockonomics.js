@@ -5,7 +5,7 @@ const bs58check = require('bs58check')
 const decimals = 8;
 const multiplier = Math.pow(10, decimals);
 
-const apiKey = "KpS5MMyTAEyLowj486FC22tHgFuQ0DWgfjBDALdSWQk"//process.env.blockonomicsKey;
+const apiKey = "QwST5adnHPdcNnuKp1sWWDJffB5W3HV1nZGrEBwLCYg"//process.env.blockonomicsKey;
 
 // See: https://www.blockonomics.co/views/segwit_xpub_convert.html
 function xpubSegwitConverter(xpub, generate = 'ypub') {
@@ -32,7 +32,7 @@ const blockonomics = module.exports = {
     supported_address: [ "BTC" ],
 
     check(addr) {
-        return RegExp('^[xy]pub[a-km-zA-HJ-NP-Z0-9]{107}$').test(addr);
+        return RegExp('^[xyz]pub[a-km-zA-HJ-NP-Z0-9]{107}$').test(addr);
     },
     
     symbol() {

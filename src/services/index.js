@@ -2,7 +2,7 @@ module.exports = {
     //ethplorer: require('./ethplorer'),
     chainso: require('./blockcypher'),
     chainz: require('./chainz'),
-    //blockonomics: require('./blockonomics'),
+    blockonomics: require('./blockonomics'),
     blockchain: require('./blockchain'),
     blockchain_btc: require('./blockchain-btc'),
     neoscan: require('./neoscan'),
