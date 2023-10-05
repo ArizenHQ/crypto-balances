@@ -8,6 +8,7 @@ module.exports = {
     neoscan: require('./neoscan'),
     ethereum: require('./ethereum'),
     ethereumERC20: require('./erc20-ethereum'),
+    ethereumNFT: require('./nft-ethereum'),
     /*
     alchemySolana: require('./solana'),
     alchemyArbitrum: require('./arbitrum'),

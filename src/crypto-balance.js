@@ -28,6 +28,7 @@ module.exports = (addr, coin) => {
         let obj = {
             address_type,
             balances: {},
+            nfts: {}
         };
         let error;
         items.forEach(item => {
@@ -37,6 +38,10 @@ module.exports = (addr, coin) => {
             }
             if (item.error) throw new Error(item.error);
             if (item.quantity) obj.balances[item.asset] = item.quantity;
+            if( item.tokenId && item.quantity) {
+                if(!obj.nfts[item.asset]) obj.nfts[item.asset] = {};
+                obj.nfts[item.asset][item.tokenId] = item.metadata;
+            }
         });
         if (Object.keys(obj.balances).length === 0 && error) {
             throw new Error(error);
