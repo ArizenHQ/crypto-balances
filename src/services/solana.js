@@ -1,12 +1,11 @@
 const Bluebird = require("bluebird");
 const post = Bluebird.promisify(require("request").post);
-const config = require("./configs/ethereum.json");
 
 module.exports = {
   supported_address: ["SOL"],
 
   check(addr) {
-    return RegExp("^(0x)?[0-9a-fA-F]{40}$").test(addr);
+    return RegExp("^[1-9A-HJ-NP-Za-km-z]{32,44}$").test(addr);
   },
 
   symbol() {
@@ -14,9 +13,16 @@ module.exports = {
   },
   fetch(addr) {
     const url = `https://solana-mainnet.g.alchemy.com/v2/${process.env.alchemyKeySolana}`;
-    const params = [addr];
+    const params = [
+      addr,
+      {
+        commitment: "finalized",
+      },
+    ];
     const headers = { "Content-Type": "application/json" };
-    const body = { jsonrpc: "2.0", method: "eth_getBalance", params, headers };
+    const body = { jsonrpc: "2.0", method: "getBalance", params, id: 1 };
+    console.log("fetch ~ body:", body);
+
     return post(url, { json: true, json: body })
       .timeout(10000)
       .cancellable()
@@ -26,11 +32,14 @@ module.exports = {
         if (json.error) throw new Error(json.error.message);
         let results = [];
         if (json.result) {
-          results.push({
-            asset: "SOL",
-            quantity: parseFloat(parseInt(json.result, 16) * 10 ** -18),
-            blockchain: "solana",
-          });
+          console.log(".spread ~ json.result:", json.result.value);
+          if (json.result.value) {
+            results.push({
+              asset: "SOL",
+              quantity: parseFloat(parseInt(json.result.value) * 10 ** -9),
+              blockchain: "solana",
+            });
+          }
         }
         return results;
       });
