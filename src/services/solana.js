@@ -21,9 +21,8 @@ module.exports = {
     ];
     const headers = { "Content-Type": "application/json" };
     const body = { jsonrpc: "2.0", method: "getBalance", params, id: 1 };
-    console.log("fetch ~ body:", body);
 
-    return post(url, { json: true, json: body })
+    return post(url, { json: true, json: body, headers })
       .timeout(10000)
       .cancellable()
       .spread((resp, json) => {
@@ -32,7 +31,6 @@ module.exports = {
         if (json.error) throw new Error(json.error.message);
         let results = [];
         if (json.result) {
-          console.log(".spread ~ json.result:", json.result.value);
           if (json.result.value) {
             results.push({
               asset: "SOL",
