@@ -286,5 +286,29 @@
   "0xD533a949740bb3306d119CC777fa900bA034cd52": {
     "name": "Curve DAO Token",
     "decimals": 18
+  },
+  "0x31429d1856aD1377A8A0079410B297e1a9e214c2": {
+    "name": "ANGLE",
+    "decimals": 18
+  },
+  "0xAaAAAA20D9E0e2461697782ef11675f668207961": {
+    "name": "AURORA",
+    "decimals": 18
+  },
+  "0x3Ba925fdeAe6B46d0BB4d424D829982Cb2F7309e": {
+    "name": "RabbitX",
+    "decimals": 18
+  },
+  "0xc98D64DA73a6616c42117b582e832812e7B8D57F": {
+    "name": "RSS3",
+    "decimals": 18
+  },
+  "0x1aBaEA1f7C830bD89Acc67eC4af516284b1bC33c": {
+    "name": "EURC",
+    "decimals": 6
+  },
+  "0xb3999F658C0391d94A37f7FF328F3feC942BcADC": {
+    "name": "Hashflow HFT",
+    "decimals": 18
   }
 }
