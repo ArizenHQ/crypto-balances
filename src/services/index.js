@@ -10,6 +10,7 @@ module.exports = {
     ethereumERC20: require('./erc20-ethereum'),
     ethereumNFT: require('./nft-ethereum'),
     alchemySolana: require('./solana'),
+    near: require('./near'),
     /*
     alchemyArbitrum: require('./arbitrum'),
     polygonERC20: require('./erc20-polygon'),
