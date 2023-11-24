@@ -2,9 +2,6 @@ const Bluebird = require("bluebird");
 const get = Bluebird.promisify(require("request").get);
 const config = require("./configs/near.json");
 
-
-// 76DA185BD1804C30BBFF07D95854E8C7
-
 module.exports = {
   supported_address: ["NEAR"],
 
