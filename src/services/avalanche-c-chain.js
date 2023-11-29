@@ -20,11 +20,7 @@ module.exports = {
     return post(url, { json: true, json: body })
       .timeout(10000)
       .cancellable()
-      .spread((resp, json) => {
-        console.log("fetch ~ body:", body)
-        console.log(".spread ~ json:", json)
-
-        
+      .spread((resp, json) => {        
         if (resp.statusCode < 200 || resp.statusCode >= 300)
           throw new Error(JSON.stringify(resp));
         if (json.error) throw new Error(json.error.message);
