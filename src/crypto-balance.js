@@ -7,7 +7,6 @@ module.exports = (addr, coin) => {
     .settle((() => {
         const result = [];
         for (let s in services) {
-            console.log(".settle ~ s:", s)
             const service = services[s];
             const supported = !coin || service.supported_address.map(c => c.toLowerCase()).includes(coin.toLowerCase());
             if (supported && service.check(addr)) {
