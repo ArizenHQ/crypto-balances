@@ -27,6 +27,7 @@ module.exports = {
         if (json.erc1155TokenBalances) {
           json.erc1155TokenBalances.map((token) => {
             const { address, balance, tokenId, metadata } = token;
+            token.contractMetadata = metadata;
             results.push({
               asset: address,
               tokenId: tokenId,
