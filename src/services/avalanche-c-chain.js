@@ -1,6 +1,6 @@
 const Bluebird = require("bluebird");
-const post = Bluebird.promisify(require("request").post);
-const config = require("./configs/ethereum.json");
+const get = Bluebird.promisify(require("request").get);
+const config = require("./configs/near.json");
 
 module.exports = {
   supported_address: ["AVAX"],
@@ -13,11 +13,9 @@ module.exports = {
     return "AVAX";
   },
   fetch(addr) {
-    const url = `https://api.avax.network/ext/bc/C/rpc`;
-    const params = [addr,"latest"];
-    const headers = { "Content-Type": "application/json" };
-    const body = { jsonrpc: "2.0", method: "eth_getBalance", params, headers, "id": 1 };
-    return post(url, { json: true, json: body })
+    const url = `https://glacier-api.avax.network/v1/chains/43114/addresses/${addr}/balances:getNative`;
+    const headers = { "Content-Type": "application/json", "x-glacier-api-key": process.env.avax_glacier_api_key };
+    return get(url, { json: true, headers: headers})
       .timeout(10000)
       .cancellable()
       .spread((resp, json) => {        
@@ -25,10 +23,10 @@ module.exports = {
           throw new Error(JSON.stringify(resp));
         if (json.error) throw new Error(json.error.message);
         let results = [];
-        if (json.result) {
+        if (json.nativeTokenBalance) {
           results.push({
             asset: "AVAX",
-            quantity: parseFloat(parseInt(json.result, 16) * 10 ** -18),
+            quantity: parseFloat(json.nativeTokenBalance.balance * 10 ** -18),
             blockchain: "avalanche-c-chain",
           });
         }
