@@ -11,7 +11,10 @@ module.exports = {
     ethereumNFT: require('./nft-ethereum'),
     alchemySolana: require('./solana'),
     near: require('./near'),
-    avalancheCChain: require('./avalanche-c-chain'),
+    avalancheCChain: require('./_avalanche-c-chain'),
+    avalancheCChainERC20: require('./erc20-avalanche-c-chain'),
+    avalancheCChainNFT721: require('./erc721-avalanche-c-chain.js'),
+    avalancheCChainNFT1155: require('./erc1155-avalanche-c-chain.js'),
     /*
     alchemyArbitrum: require('./arbitrum'),
     polygonERC20: require('./erc20-polygon'),
