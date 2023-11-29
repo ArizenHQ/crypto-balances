@@ -11,6 +11,7 @@ module.exports = {
     ethereumNFT: require('./nft-ethereum'),
     alchemySolana: require('./solana'),
     near: require('./near'),
+    avalancheCChain: require('./avalanche-c-chain'),
     /*
     alchemyArbitrum: require('./arbitrum'),
     polygonERC20: require('./erc20-polygon'),
