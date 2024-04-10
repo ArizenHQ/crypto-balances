@@ -12,6 +12,7 @@ module.exports = {
   symbol() {
     return "ARB";
   },
+
   fetch(addr) {
     const url = `https://arb-mainnet.g.alchemy.com/v2/${process.env.alchemyKeyArbitrum}`;
     const params = [addr];

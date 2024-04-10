@@ -5,7 +5,7 @@ var cors = require('cors');
 const balance = require('./crypto-balance');
 require('dotenv').config();
 
-const cache = new NodeCache({ stdTTL: 300 });
+const cache = process.env.NO_CACHE ? new NodeCache({ stdTTL: 0 }) : new NodeCache({ stdTTL: 300 });
 
 app.use(cors());
 
