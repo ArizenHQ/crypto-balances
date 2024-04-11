@@ -57,12 +57,15 @@ const blockchain = (module.exports = {
           return blockchain.fetch(xpubSegwitConverter(addr));
         }
         */
-
-        return {
-          quantity: balance,
-          asset: "BTC",
-          blockchain: "BITCOIN",
-        };
+        let results = [];
+        if(balance > 0) {
+          results.push({
+            asset: "BTC",
+            quantity: balance,
+            blockchain: "BITCOIN",
+          });
+        }
+        return results;
       });
   },
 });

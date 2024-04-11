@@ -40,11 +40,15 @@ module.exports = {
         .cancellable()
         .spread(function(resp, json) {
             if (resp.statusCode < 200 || resp.statusCode >= 300) throw new Error(JSON.stringify(resp));
-            return {
-                quantity: parseFloat(json.balance) / multiplier,
+            let results = [];
+            if(json.balance > 0) {
+              results.push({
                 asset: network,
-                blockchain: this.blockchain[network]
-            };
+                quantity:  parseFloat(json.balance) / multiplier,
+                blockchain: this.blockchain[network],
+              });
+            }
+            return results;
         });
     }
 };

@@ -58,11 +58,15 @@ const blockchain = (module.exports = {
         }
         */
 
-        return {
-          quantity: balance,
-          asset: "BTC",
-          blockchain: "BITCOIN",
-        };
+        let results = [];
+        if(balance > 0) {
+          results.push({
+            asset: "BTC",
+            quantity: balance,
+            blockchain: "BITCOIN",
+          });
+        }
+        return results;
       });
   },
 });

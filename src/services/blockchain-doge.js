@@ -57,12 +57,15 @@ const blockchain = (module.exports = {
           return blockchain.fetch(xpubSegwitConverter(addr));
         }
         */
-
-        return {
-          quantity: balance,
-          asset: "BTC",
-          blockchain: "DOGECOIN",
-        };
+        let results = [];
+        if(balance > 0) {
+          results.push({
+            asset: "DOGE",
+            quantity: balance,
+            blockchain: "DOGECOIN",
+          });
+        }
+        return results;
       });
   },
 });

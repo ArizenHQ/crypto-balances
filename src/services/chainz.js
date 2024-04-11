@@ -33,11 +33,16 @@ module.exports = {
         .cancellable()
         .spread(function(resp, body) {
             if (resp.statusCode < 200 || resp.statusCode >= 300) throw new Error(JSON.stringify(resp));
-            return {
-                quantity: parseFloat(body),
+            let results = [];
+            let json = JSON.parse(body);
+            if(json.balance > 0) {
+              results.push({
                 asset: network,
-                blockchain: this.blockchain[network]
-            };
+                quantity:  parseFloat(json.balance) / multiplier,
+                blockchain: this.blockchain[network],
+              });
+            }
+            return results;
         });
     }
 };
