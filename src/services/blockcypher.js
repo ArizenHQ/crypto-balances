@@ -7,10 +7,10 @@ const multiplier = Math.pow(10, decimals);
 module.exports = {
 
     blockchain: {
-        BTC: "bitcoin",
-        LTC: "litecoin",
-        DASH: "dash",
-        DOGE: "dogecoin"
+        BTC: "BITCOIN",
+        LTC: "LITECOIN",
+        DASH: "DASH",
+        DOGE: "DOGECOIN"
     },
 
     supported_address: [ "BTC", "LTC", "DASH", "DOGE" ],

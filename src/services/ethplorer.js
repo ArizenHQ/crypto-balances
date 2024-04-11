@@ -33,7 +33,7 @@ module.exports = {
                 results.push({
                     asset: "ETH",
                     quantity: parseFloat(json.ETH.balance),
-                    blockchain: "ethereum"
+                    blockchain: "ETHEREUM"
                 });
             }
             return results;

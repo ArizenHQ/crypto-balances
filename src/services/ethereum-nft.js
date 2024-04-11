@@ -32,7 +32,7 @@ module.exports = {
                 asset: contract.address,
                 tokenId: parseInt(id.tokenId),
                 quantity: parseInt(balance),
-                blockchain: "ethereum",
+                blockchain: "ETHEREUM",
                 metadata: token,
               });
             }

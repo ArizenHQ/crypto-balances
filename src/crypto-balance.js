@@ -36,7 +36,8 @@ module.exports = (addr, coin) => {
                 finalResult[blockchain] = {
                     address_types: item.serviceSymbol || 'unknown', // Utiliser le symbole du service
                     balances: {},
-                    nfts: {}
+                    nfts: {},
+                    blockchains: blockchain
                 };
             }
             const type = item.asset;

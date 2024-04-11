@@ -30,7 +30,7 @@ module.exports = {
           results.push({
             asset: "ARB",
             quantity: parseFloat(parseInt(json.result, 16) * 10 ** -18),
-            blockchain: "arbitrum",
+            blockchain: "ARBITRUM",
           });
         }
         return results;

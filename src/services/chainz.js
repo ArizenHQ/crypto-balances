@@ -4,9 +4,9 @@ const req = Bluebird.promisify(require("request"));
 module.exports = {
 
     blockchain: {
-        L: "litecoin",
-        STRAT: "stratis",
-        DGB: "digibyte",
+        L: "LITECOIN",
+        STRAT: "STRATIS",
+        DGB: "DIGIBYTE",
     },
 
     supported_address: [ "LTC", "STRAT", "DGB" ],

@@ -24,7 +24,7 @@ module.exports = {
             return json.balance.map(b => ({
                 asset: b.asset_symbol,
                 quantity: b.amount,
-                blockchain: "neo"
+                blockchain: "NEO"
             }));
         });
     }

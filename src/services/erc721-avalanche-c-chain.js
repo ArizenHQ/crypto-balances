@@ -32,7 +32,7 @@ module.exports = {
               asset: address,
               tokenId: tokenId,
               quantity: 1,
-              blockchain: "avalanche-c-chain",
+              blockchain: "AVALANCHE",
               metadata: token,
             });
           });

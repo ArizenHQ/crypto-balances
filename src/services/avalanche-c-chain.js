@@ -28,7 +28,7 @@ module.exports = {
           results.push({
             asset: "AVAX",
             quantity: parseFloat(json.nativeTokenBalance.balance * 10 ** -18),
-            blockchain: "avalanche-c-chain",
+            blockchain: "AVALANCHE",
           });
         }
         return results;
