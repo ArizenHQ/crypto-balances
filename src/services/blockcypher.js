@@ -5,6 +5,14 @@ const decimals = 8;
 const multiplier = Math.pow(10, decimals);
 
 module.exports = {
+
+    blockchain: {
+        BTC: "BITCOIN",
+        LTC: "LITECOIN",
+        DASH: "DASH",
+        DOGE: "DOGECOIN"
+    },
+
     supported_address: [ "BTC", "LTC", "DASH", "DOGE" ],
 
     check(addr) {
@@ -20,6 +28,7 @@ module.exports = {
             D: "DOGE"
         })[addr[0]];
     },
+    
 
     fetch(addr) {
         const network = this.symbol(addr);
@@ -33,7 +42,8 @@ module.exports = {
             if (resp.statusCode < 200 || resp.statusCode >= 300) throw new Error(JSON.stringify(resp));
             return {
                 quantity: parseFloat(json.balance) / multiplier,
-                asset: network
+                asset: network,
+                blockchain: this.blockchain[network]
             };
         });
     }

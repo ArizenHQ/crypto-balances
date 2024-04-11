@@ -43,7 +43,7 @@ module.exports = {
             results.push({
               asset: contractAddress,
               quantity: parseFloat(parseInt(tokenBalance, 16)) / Math.pow(10, parseInt(decimals)|| 0),
-              blockchain: "solana",
+              blockchain: "SOLANA",
             });
           });
         }

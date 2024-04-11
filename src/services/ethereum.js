@@ -29,7 +29,7 @@ module.exports = {
           results.push({
             asset: "ETH",
             quantity: parseFloat(parseInt(json.result, 16) * 10 ** -18),
-            blockchain: "ethereum",
+            blockchain: "ETHEREUM",
           });
         }
         return results;

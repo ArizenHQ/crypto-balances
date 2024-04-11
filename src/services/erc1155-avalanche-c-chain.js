@@ -32,7 +32,7 @@ module.exports = {
               asset: address,
               tokenId: tokenId,
               quantity: parseFloat(balance * 10 ** -18),
-              blockchain: "avalanche-c-chain",
+              blockchain: "AVALANCHE",
               metadata: token,
             });
           });

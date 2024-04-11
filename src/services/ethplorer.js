@@ -32,7 +32,8 @@ module.exports = {
             if (json.ETH) {
                 results.push({
                     asset: "ETH",
-                    quantity: parseFloat(json.ETH.balance)
+                    quantity: parseFloat(json.ETH.balance),
+                    blockchain: "ETHEREUM"
                 });
             }
             return results;

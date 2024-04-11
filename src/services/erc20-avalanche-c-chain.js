@@ -30,7 +30,7 @@ module.exports = {
             results.push({
               asset: address,
               quantity: balance / Math.pow(10, parseInt(decimals)|| 0),
-              blockchain: "avalanche-c-chain",
+              blockchain: "AVALANCHE",
             });
           });
         }

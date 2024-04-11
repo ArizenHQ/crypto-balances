@@ -27,7 +27,7 @@ module.exports = {
           results.push({
             asset: "NEAR",
             quantity: parseFloat(json.account[0].amount * 10 ** -24),
-            blockchain: "near",
+            blockchain: "NEAR",
           });
         }
         return results;

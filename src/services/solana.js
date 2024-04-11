@@ -35,7 +35,7 @@ module.exports = {
             results.push({
               asset: "SOL",
               quantity: parseFloat(parseInt(json.result.value) * 10 ** -9),
-              blockchain: "solana",
+              blockchain: "SOLANA",
             });
           }
         }

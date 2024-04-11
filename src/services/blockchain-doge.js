@@ -61,6 +61,7 @@ const blockchain = (module.exports = {
         return {
           quantity: balance,
           asset: "BTC",
+          blockchain: "DOGECOIN",
         };
       });
   },

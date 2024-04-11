@@ -29,7 +29,7 @@ module.exports = {
           results.push({
             asset: "MATIC",
             quantity: parseFloat(parseInt(json.result, 16) * 10 ** -18),
-            blockchain: "polygon",
+            blockchain: "POLYGON",
           });
         }
         return results;

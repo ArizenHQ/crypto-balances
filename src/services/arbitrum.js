@@ -12,6 +12,7 @@ module.exports = {
   symbol() {
     return "ARB";
   },
+
   fetch(addr) {
     const url = `https://arb-mainnet.g.alchemy.com/v2/${process.env.alchemyKeyArbitrum}`;
     const params = [addr];
@@ -29,7 +30,7 @@ module.exports = {
           results.push({
             asset: "ARB",
             quantity: parseFloat(parseInt(json.result, 16) * 10 ** -18),
-            blockchain: "arbitrum",
+            blockchain: "ARBITRUM",
           });
         }
         return results;

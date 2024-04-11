@@ -56,7 +56,8 @@ const blockonomics = module.exports = {
             
             return {
                 quantity: balance,
-                asset: "BTC"
+                asset: "BTC",
+                blockchain: "BITCOIN"
             };
         });
     }

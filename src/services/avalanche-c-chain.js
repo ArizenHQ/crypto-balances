@@ -12,6 +12,7 @@ module.exports = {
   symbol() {
     return "AVAX";
   },
+
   fetch(addr) {
     const url = `https://glacier-api.avax.network/v1/chains/43114/addresses/${addr}/balances:getNative`;
     const headers = { "Content-Type": "application/json", "x-glacier-api-key": process.env.avax_glacier_api_key };
@@ -27,7 +28,7 @@ module.exports = {
           results.push({
             asset: "AVAX",
             quantity: parseFloat(json.nativeTokenBalance.balance * 10 ** -18),
-            blockchain: "avalanche-c-chain",
+            blockchain: "AVALANCHE",
           });
         }
         return results;

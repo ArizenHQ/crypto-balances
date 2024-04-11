@@ -2,6 +2,13 @@ const Bluebird = require("bluebird");
 const req = Bluebird.promisify(require("request"));
 
 module.exports = {
+
+    blockchain: {
+        L: "LITECOIN",
+        STRAT: "STRATIS",
+        DGB: "DIGIBYTE",
+    },
+
     supported_address: [ "LTC", "STRAT", "DGB" ],
 
     check(addr) {
@@ -28,7 +35,8 @@ module.exports = {
             if (resp.statusCode < 200 || resp.statusCode >= 300) throw new Error(JSON.stringify(resp));
             return {
                 quantity: parseFloat(body),
-                asset: network
+                asset: network,
+                blockchain: this.blockchain[network]
             };
         });
     }

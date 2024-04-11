@@ -29,7 +29,7 @@ module.exports = {
           results.push({
             asset: "AVAX",
             quantity: parseFloat(parseInt(json.result, 16) * 10 ** -18),
-            blockchain: "avalanche-c-chain",
+            blockchain: "AVALANCHE",
           });
         }
         return results;
