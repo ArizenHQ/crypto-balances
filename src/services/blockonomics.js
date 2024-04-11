@@ -53,12 +53,15 @@ const blockonomics = module.exports = {
             if (balance == 0 && addr[0] == "x") {
                 return blockonomics.fetch(xpubSegwitConverter(addr));
             }
-            
-            return {
-                quantity: balance,
+            let results = [];
+            if(balance > 0) {
+              results.push({
                 asset: "BTC",
-                blockchain: "BITCOIN"
-            };
+                quantity: balance,
+                blockchain: "BITCOIN",
+              });
+            }
+            return results;
         });
     }
 };
