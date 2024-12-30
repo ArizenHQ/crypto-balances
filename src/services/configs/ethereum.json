@@ -310,5 +310,9 @@
   "0xb3999f658c0391d94a37f7ff328f3fec942bcadc": {
     "name": "Hashflow HFT",
     "decimals": 18
+  },
+  "0x5afe3855358e112b5647b952709e6165e1c1eeee": {
+    "name": "Safe",
+    "decimals": 18
   }
 }
