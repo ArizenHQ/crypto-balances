@@ -28,4 +28,6 @@ module.exports = {
     
     alchemySolana: require('./solana'),
     solanaERC20: require('./erc20-solana'),
+    
+    tezos: require('./tezos'),
 };
