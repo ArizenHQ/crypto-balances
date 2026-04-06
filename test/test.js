@@ -75,6 +75,26 @@ describe("Balance", function() {
         })
     );
 
+    // ethereum staking (requires beaconchainApiKey env var)
+    it("has Ethereum staking stats for a staking address", function() {
+        if (!process.env.beaconchainApiKey) return this.skip();
+        return balance("0xB9D7934878B5FB9610B3fE8A5e441e8fad7E293f", "ETH").then((result) => {
+            expect(result.ETHEREUM).to.exist;
+            expect(result.ETHEREUM.staking).to.exist;
+            expect(result.ETHEREUM.staking.validatorCount).to.be.above(0);
+            expect(result.ETHEREUM.staking.totalStakedETH).to.be.above(0);
+            expect(result.ETHEREUM.staking.validators).to.be.an('array');
+        });
+    });
+
+    it("returns no staking field for a non-staking ETH address", () =>
+        balance("0x1ebacb7844fdc322f805904fbf1962802db1537c", "ETH").then((result) => {
+            if (result.ETHEREUM) {
+                expect(result.ETHEREUM.staking).to.not.exist;
+            }
+        })
+    );
+
     // Chainz
     it("has a LTC Sewgit balance", () =>
         balance("MJejLHNVJLdkp9RM97AyFE85qmpPzh8PYw").then((result) => {

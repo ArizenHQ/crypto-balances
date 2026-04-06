@@ -63,6 +63,9 @@ module.exports = (addr, coin) => {
           }
           finalResult[blockchain].nfts[type][item.tokenId] = item.metadata;
         }
+        if (item.staking) {
+          finalResult[blockchain].staking = item.staking;
+        }
       });
 
       return finalResult;
