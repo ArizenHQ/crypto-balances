@@ -2,8 +2,8 @@ const Bluebird = require("bluebird");
 const get = Bluebird.promisify(require("request").get);
 
 const GWEI_TO_ETH = 1e9;
-// beaconcha.in free tier: max 100 validators per batch request
-const MAX_VALIDATORS_PER_BATCH = 100;
+// beaconcha.in free tier: keep batch small to avoid rate limits
+const MAX_VALIDATORS_PER_BATCH = 20;
 
 module.exports = {
   supported_address: ["ETH"],
@@ -40,11 +40,28 @@ module.exports = {
         const batchIndices = indices.slice(0, MAX_VALIDATORS_PER_BATCH);
         const statsUrl = `https://beaconcha.in/api/v1/validator/${batchIndices.join(",")}${apiKeyParam}`;
 
-        return get(statsUrl, { json: true })
+        return Bluebird.delay(1500)
+          .then(() => get(statsUrl, { json: true }))
           .timeout(10000)
           .cancellable()
           .spread((statsResp, statsJson) => {
             let validators = indices.map((idx) => ({ index: idx }));
+
+            if (statsResp.statusCode === 429) {
+              // Rate limited: return partial data (validator count only, no balance stats)
+              return [{
+                asset: "ETH_STAKING",
+                blockchain: "ETHEREUM",
+                staking: {
+                  validatorCount,
+                  activeValidators: null,
+                  totalStakedETH: null,
+                  totalBalanceETH: null,
+                  totalRewardsETH: null,
+                  validators: validators.slice(0, MAX_VALIDATORS_PER_BATCH),
+                },
+              }];
+            }
 
             if (
               statsResp.statusCode === 200 &&
