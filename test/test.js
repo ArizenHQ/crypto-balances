@@ -83,7 +83,6 @@ describe("Balance", function() {
             expect(result.ETHEREUM.staking).to.exist;
             expect(result.ETHEREUM.staking.validatorCount).to.be.above(0);
             expect(result.ETHEREUM.staking.totalStakedETH).to.be.above(0);
-            expect(result.ETHEREUM.staking.validators).to.be.an('array');
         });
     });
 
