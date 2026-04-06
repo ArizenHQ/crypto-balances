@@ -11,6 +11,7 @@ module.exports = {
     ethereum: require('./ethereum'),
     ethereumERC20: require('./erc20-ethereum'),
     ethereumNFT: require('./ethereum-nft.js'),
+    ethereumStaking: require('./ethereum-staking'),
     
     near: require('./near'),
 
