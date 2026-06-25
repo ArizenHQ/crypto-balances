@@ -314,5 +314,9 @@
   "0x5afe3855358e112b5647b952709e6165e1c1eeee": {
     "name": "Safe",
     "decimals": 18
+  },
+  "0x58d97b57bb95320f9a05dc918aef65434969c2b2": {
+    "name": "Morpho",
+    "decimals": 18
   }
 }
