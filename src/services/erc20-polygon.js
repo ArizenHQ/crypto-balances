@@ -1,6 +1,6 @@
 const Bluebird = require("bluebird");
 const post = Bluebird.promisify(require("request").post);
-const config = require("./configs/ethereum.json");
+const { buildBalances } = require("./token-decimals");
 
 module.exports = {
   supported_address: ["MATIC"],
@@ -30,24 +30,7 @@ module.exports = {
         if (resp.statusCode < 200 || resp.statusCode >= 300)
           throw new Error(JSON.stringify(resp));
         if (json.error) throw new Error(json.error.message);
-        let results = [];
-        if (json.result.tokenBalances) {
-          json.result.tokenBalances.map((token) => {
-            const { contractAddress, tokenBalance } = token;
-            let decimals = 0;
-            let name = contractAddress;
-            if(config[contractAddress.toLowerCase()]){
-              name=config[contractAddress].name;
-              decimals=config[contractAddress].decimals;
-            }
-            results.push({
-              asset: contractAddress,
-              quantity: parseFloat(parseInt(tokenBalance, 16)) / Math.pow(10, parseInt(decimals)|| 0),
-              blockchain: "POLYGON",
-            });
-          });
-        }
-        return results;
+        return buildBalances(url, json.result.tokenBalances, "POLYGON");
       });
   },
 };
